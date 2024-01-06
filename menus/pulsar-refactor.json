@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle pulsar-refactor",
+        "command": "pulsar-refactor:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "pulsar-refactor",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "pulsar-refactor:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

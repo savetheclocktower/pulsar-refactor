@@ -1,0 +1,46 @@
+{
+  "name": "pulsar-refactor",
+  "main": "./lib/main",
+  "version": "0.0.1",
+  "description": "Perform project-wide renaming of symbols",
+  "keywords": [],
+  "activationCommands": {
+    "atom-text-editor": ["pulsar-refactor:rename", "pulsar-refactor:list-all-providers"]
+  },
+  "repository": "https://github.com/savetheclocktower/pulsar-refactor",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "dedent": "^1.5.1"
+  },
+  "consumedServices": {
+    "refactor": {
+      "versions": {
+        "0.1.0": "consumeRefactor",
+        "0.2.0": "consumeRefactorWithPrepare"
+      }
+    }
+  },
+  "configSchema": {
+    "saveAfterEditInOpenBuffers": {
+      "type": "boolean",
+      "order": 1,
+      "description": "Whether an open buffer should be saved after a rename operation. If enabled, open buffers will be saved **if** they were not modified at the time of the rename. If disabled, open buffers will not be saved automatically.",
+      "default": false
+    },
+    "offerUndoNotification": {
+      "type": "boolean",
+      "order": 2,
+      "description": "If enabled, will show a notification after a successful rename that lists the affected files and offers an <kbd>Undo</kbd> button.",
+      "default": false
+    },
+    "enableDebugLogging": {
+      "type": "boolean",
+      "order": 3,
+      "description": "Whether to log diagnostic messages to the console.",
+      "default": false
+    }
+  }
+}
