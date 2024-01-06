@@ -18,12 +18,15 @@ Your IDE background package will tell us if it knows how to rename that symbol. 
 
 <p><img width="598" alt="Screenshot 2024-01-06 at 2 21 45 PM" src="https://github.com/pulsar-edit/pulsar/assets/3450/db4c344d-9331-4a2a-bf06-430ca34e90d3"></p>
 
-Edit the name of the symbol and press <kbd>Return</kbd>. The renaming proceeds as follows:
+Edit the name of the symbol and press <kbd>Return</kbd>. The renaming proceeds in a manner similar to that of a project-wide find-and-replace:
 
-* All references to that symbol in **open editors** — files that you already had open in your workspace — will be renamed. If there already were unsaved changes in that editor, it _will not be saved_; otherwise, the `saveAfterEditInOpenBuffers` setting controls whether this package will save each editor after the rename.
-* All references to that symbol in **unopened editors** — files that were not opened for editing in your workspace — wil be renamed and **immediately saved**. This matches the behavior of a project-wide find-and-replace.
+* All references to that symbol in **open editors** — files that you already had open in your workspace — will be renamed. By default, these changes will not be committed to disk automatically.
 
-If `offerUndoNotification` is enabled, you’ll see a post-rename notification, at which point you’ll be able to undo the rename if you regret your course of action.
+  If `saveAfterEditInOpenBuffers` is enabled, this package will automatically save each editor after a rename operation _if_ said editor was unmodified — i.e., its contents matched the contents on disk. (This package will never automatically save a buffer for which there are unrelated pending changes.)
+
+* All references to that symbol in **unopened editors** — files that were not opened for editing in your workspace — wil be renamed and **immediately saved**.
+
+* If `offerUndoNotification` is enabled, you’ll see a post-rename notification that describes which files were touched and offers an <kbd>Undo</kbd> button just in case you regret your course of action.
 
 ### Why is this package renaming things in [subjective manner X] instead of in [subjective manner Y]?
 
@@ -35,7 +38,7 @@ If this package is doing weird things, like trying to touch files in `node_modul
 
 We trust that the language server knows what it’s doing. The set of changes required to rename a symbol from X to Y is _atomic_, and we’re not entitled to ignore any of those edits without introducing errors into the process.
 
-## Technical details  for IDE backend package implementers
+## Technical details for IDE backend package implementers
 
 ### A history lesson
 
