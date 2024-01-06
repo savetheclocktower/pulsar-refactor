@@ -1,11 +1,14 @@
 {
   "name": "pulsar-refactor",
   "main": "./lib/main",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Perform project-wide renaming of symbols",
   "keywords": [],
   "activationCommands": {
-    "atom-text-editor": ["pulsar-refactor:rename", "pulsar-refactor:list-all-providers"]
+    "atom-text-editor": [
+      "pulsar-refactor:rename",
+      "pulsar-refactor:list-all-providers"
+    ]
   },
   "repository": "https://github.com/savetheclocktower/pulsar-refactor",
   "license": "MIT",
