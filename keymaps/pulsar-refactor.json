@@ -1,5 +1,11 @@
 {
-  "atom-workspace": {
-    "ctrl-alt-o": "pulsar-refactor:toggle"
+  ".platform-darwin atom-text-editor:not([mini])": {
+    "cmd-alt-shift-r": "pulsar-refactor:rename"
+  },
+  ".platform-win32 atom-text-editor:not([mini])": {
+    "ctrl-alt-shift-r": "pulsar-refactor:rename"
+  },
+  ".platform-linux atom-text-editor:not([mini])": {
+    "ctrl-alt-shift-r": "pulsar-refactor:rename"
   }
 }

@@ -38,6 +38,15 @@ If this package is doing weird things, like trying to touch files in `node_modul
 
 We trust that the language server knows what it’s doing. The set of changes required to rename a symbol from X to Y is _atomic_, and we’re not entitled to ignore any of those edits without introducing errors into the process.
 
+## Commands
+
+Enjoy the keybinding or rename it in your `keymap.cson`.
+
+|Command|Description|Default Keybinding (Linux/Windows)| Default Keybinding (macOS)|
+|-------|-----------|--------------------------|------------------|
+|`refactor:rename`  |Rename the symbol under the cursor|<kbd>ctrl-alt-shift-r</kbd>|<kbd>cmd-alt-shift-r</kbd>|
+
+
 ## Technical details for IDE backend package implementers
 
 ### A history lesson
