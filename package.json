@@ -1,7 +1,7 @@
 {
   "name": "pulsar-refactor",
   "main": "./lib/main",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Perform project-wide renaming of symbols",
   "keywords": [],
   "activationCommands": {
